@@ -21,6 +21,10 @@ const PostCard: React.FC<{
 
 const Home: NextPage = () => {
   const postQuery = trpc.post.all.useQuery();
+  const hey = trpc.post.testHey.useQuery();
+  hey.data?.hey;
+  const post1 = postQuery.data[0];
+  post1?.joe;
 
   return (
     <>

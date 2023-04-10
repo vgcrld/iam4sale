@@ -5,6 +5,9 @@ export const postRouter = router({
   all: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.post.findMany();
   }),
+  testHey: publicProcedure.query(({ ctx }) => {
+    return { hey: "rich" };
+  }),
   byId: publicProcedure.input(z.string()).query(({ ctx, input }) => {
     return ctx.prisma.post.findFirst({ where: { id: input } });
   }),
